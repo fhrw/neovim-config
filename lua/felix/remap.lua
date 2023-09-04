@@ -8,6 +8,9 @@ vim.keymap.set("n", "<leader>w", function()
 	vim.lsp.buf.format()
 	vim.cmd.w()
 end)
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("i", "jk", "<Esc>")
 
 --windows
 vim.keymap.set("n", "sv", function()
