@@ -14,6 +14,15 @@ return require("packer").startup(function(use)
         "svrana/neosolarized.nvim",
         requires = { "tjdevries/colorbuddy.nvim" },
     })
+    use({
+        "neanias/everforest-nvim",
+        -- Optional; default configuration will be used if setup isn't called.
+        config = function()
+            require("everforest").setup({
+                background = "medium"
+            })
+        end,
+    })
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use("mbbill/undotree")
     use({
@@ -22,7 +31,7 @@ return require("packer").startup(function(use)
         requires = {
             -- LSP Support
             { "neovim/nvim-lspconfig" }, -- Required
-            {                   -- Optional
+            {                            -- Optional
                 "williamboman/mason.nvim",
                 run = function()
                     pcall(vim.cmd, "MasonUpdate")
@@ -31,9 +40,9 @@ return require("packer").startup(function(use)
             { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
             -- Autocompletion
-            { "hrsh7th/nvim-cmp" }, -- Required
+            { "hrsh7th/nvim-cmp" },     -- Required
             { "hrsh7th/cmp-nvim-lsp" }, -- Required
-            { "L3MON4D3/LuaSnip" }, -- Required
+            { "L3MON4D3/LuaSnip" },     -- Required
         },
     })
     use("windwp/nvim-autopairs")
@@ -44,4 +53,5 @@ return require("packer").startup(function(use)
         require('orgmode').setup {}
     end
     }
+    use("dhruvasagar/vim-table-mode")
 end)

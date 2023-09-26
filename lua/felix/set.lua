@@ -1,5 +1,5 @@
-vim.cmd("set background=light")
-vim.cmd("colorscheme PaperColorSlim")
+vim.cmd("set background=dark")
+vim.cmd("colorscheme everforest")
 vim.opt.cursorline            = true
 vim.opt.termguicolors         = true
 vim.opt.title                 = true
